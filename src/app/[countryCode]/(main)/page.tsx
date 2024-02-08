@@ -8,7 +8,7 @@ import { getRegion } from "app/actions"
 import { ProductCollectionWithPreviews } from "types/global"
 
 export const metadata: Metadata = {
-  title: "Medusa Next.js Starter Template",
+  title: "Next.js",
   description:
     "A performant frontend ecommerce starter template with Next.js 14 and Medusa.",
 }
@@ -54,11 +54,15 @@ const getCollectionsWithProducts = async (
   return collections as unknown as ProductCollectionWithPreviews[]
 }
 
-export default async function Home({
-  params: { countryCode },
-}: {
-  params: { countryCode: string }
-}) {
+
+interface IParams{
+  countryCode:string
+}
+interface IHome {
+  params: IParams
+}
+
+export default async function Home({ params: { countryCode } }: IHome) {
   const collections = await getCollectionsWithProducts(countryCode)
   const region = await getRegion(countryCode)
 

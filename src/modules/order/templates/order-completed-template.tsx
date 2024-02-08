@@ -15,7 +15,7 @@ type OrderCompletedTemplateProps = {
 }
 
 export default function OrderCompletedTemplate({
-  order,
+  order
 }: OrderCompletedTemplateProps) {
   const isOnboarding = cookies().get("_medusa_onboarding")?.value === "true"
 

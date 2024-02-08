@@ -564,6 +564,8 @@ export async function getCollectionsList(
     .catch((err) => {
       throw err
     })
+    
+  console.log('collections', collections)
 
   const count = collections.length
 
